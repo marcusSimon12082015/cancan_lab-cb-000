@@ -17,9 +17,9 @@ class NotesController < ApplicationController
   def edit
   end
 
-  private 
+  private
 
   def note_params
     params.require(:note).permit(:content,:visible_to)
-  end 
+  end
 end
