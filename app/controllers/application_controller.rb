@@ -8,8 +8,10 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    byebug if params[:action] == "update"
-    User.find_by(id:session[:user_id])
+    if params[:action] == "update"
+      byebug
+      User.find_by(id:session[:user_id])
+    end
   end
 
   helper_method :current_user
