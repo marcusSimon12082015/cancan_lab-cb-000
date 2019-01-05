@@ -9,6 +9,6 @@ class Note < ActiveRecord::Base
   end
 
   def visible_to
-    
-  end 
+    return self.readers.join(', ')
+  end
 end
