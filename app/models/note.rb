@@ -3,8 +3,8 @@ class Note < ActiveRecord::Base
   has_many :readers, through: :viewers, source: :user
 
   def visible_to=(readers)
-    readers.split(',').each do |reader|
-
-    end 
-  end 
+    readers.delete(' ').split(',').each do |reader|
+      self.readers << User.create(name: reader)
+    end
+  end
 end
