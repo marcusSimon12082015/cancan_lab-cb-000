@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'note/create'
+
+  get 'note/destroy'
+
+  get 'note/update'
+
+  get 'note/new'
+
+  get 'note/edit'
+
   get 'users/create'
 
   get 'user/create'
