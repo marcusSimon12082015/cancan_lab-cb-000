@@ -6,7 +6,6 @@ class Note < ActiveRecord::Base
     readers.delete(' ').split(',').each do |reader|
       self.readers << User.create(name: reader)
     end
-    byebug
   end
 
   def visible_to
