@@ -4,7 +4,8 @@ class Note < ActiveRecord::Base
 
   def visible_to=(readers)
     readers.delete(' ').split(',').each do |reader|
-      self.readers << User.create(name: reader)
+      user = User.find_by(name: reader)
+      self.readers << user unless !user.nil?
     end
     byebug
   end
