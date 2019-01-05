@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    byebug
+    byebug if new_content == 'a different secret'
     User.find_by(id:session[:user_id])
   end
 
