@@ -3,6 +3,7 @@ class NotesController < ApplicationController
 
   def create
     byebug
+    redirect_to '/'
   end
 
   def show
