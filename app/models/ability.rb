@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read, Note, user_id: user.id
+    can :read, Note, user_id: user.id unless user.nil?
     can :update, Note, user_id: user.id
     can :create, Note unless user.nil?
     can :read, Note do |note|
