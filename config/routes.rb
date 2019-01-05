@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root '/'
   get 'session/create'
 
   get 'session/destroy'
