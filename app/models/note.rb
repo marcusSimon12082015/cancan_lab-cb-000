@@ -10,6 +10,7 @@ class Note < ActiveRecord::Base
   end
 
   def visible_to
+    byebug
     return self.readers.join(', ')
   end
 end
