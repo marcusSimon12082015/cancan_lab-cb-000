@@ -19,12 +19,12 @@ class NotesController < ApplicationController
 
   def update
     byebug
-    if @note.update_attributes(note_params)
-      user = User.find_by(session[:user_id])
-      @note.user = user unless user.nil?
-      @note.readers << user unless user.nil?
-      redirect_to '/'
-    end
+#    if @note.update_attributes(note_params)
+#      user = User.find_by(session[:user_id])
+#      @note.user = user unless user.nil?
+#      @note.readers << user unless user.nil?
+#      redirect_to '/'
+#    end
   end
 
   def new
