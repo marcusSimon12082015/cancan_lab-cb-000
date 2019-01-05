@@ -31,7 +31,6 @@ RSpec.describe NotesController, type: :controller do
       assert Note.find(note_id).content == content
 
       new_content = 'a different secret'
-      byebug
       post :update, params: { use_route: 'notes/:id', id: note_id, note: {content: new_content, visible_to: 'alice'}}
       assert_redirected_to '/'
       note = Note.find(note_id)
