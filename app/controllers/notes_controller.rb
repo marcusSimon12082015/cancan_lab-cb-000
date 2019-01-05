@@ -2,7 +2,6 @@ class NotesController < ApplicationController
   load_and_authorize_resource
 
   def create
-    byebug
     redirect_to '/'
   end
 
