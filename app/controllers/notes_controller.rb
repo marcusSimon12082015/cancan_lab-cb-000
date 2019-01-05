@@ -5,6 +5,10 @@ class NotesController < ApplicationController
 
   end
 
+  def show 
+
+  end 
+  
   def destroy
   end
 
