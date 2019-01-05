@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   get 'user/create'
 
+  resources :notes, :except => [:update]
   post "/notes/:id" => "notes#update"
-  resources :notes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
