@@ -31,6 +31,7 @@ class NotesController < ApplicationController
   end
 
   def edit
+    byebug
   end
 
   private
