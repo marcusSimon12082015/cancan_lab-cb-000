@@ -2,7 +2,9 @@ class NotesController < ApplicationController
   load_and_authorize_resource
 
   def create
-    @note.user = User.find_by(session[:id])
+    user = User.find_by(session[:user_id])
+    @note.user = user unless user.nil?
+    @note.readers << user unless user.nil?
     byebug
     redirect_to '/'
   end
