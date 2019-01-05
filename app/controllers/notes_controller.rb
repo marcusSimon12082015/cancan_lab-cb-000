@@ -18,6 +18,7 @@ class NotesController < ApplicationController
   end
 
   def update
+    byebug
     if @note.update_attributes(note_params)
       user = User.find_by(session[:user_id])
       @note.user = user unless user.nil?
