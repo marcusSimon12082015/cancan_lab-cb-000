@@ -23,9 +23,7 @@ class NotesController < ApplicationController
     @note.update(note_params)
     @note.user = user unless user.nil?
     @note.readers << user unless user.nil?
-    if @note.update
-      redirect_to '/'
-    end
+    redirect_to '/'
   end
 
   def new
