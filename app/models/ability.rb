@@ -4,9 +4,9 @@ class Ability
   def initialize(user)
     can :read, Note, user_id: user.id
     can :update, Note, user_id: user.id
-    can :read, Note do |note|
-      !Viewer.find_by(user_id: user.id, note_id: note.id).nil?
-    end
+#    can :read, Note do |note|
+#      !Viewer.find_by(user_id: user.id, note_id: note.id).nil?
+#    end
 
     cannot :read, Note do |note|
       Viewer.where(user_id: user.id, note_id: note.id) == []
