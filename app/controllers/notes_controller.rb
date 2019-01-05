@@ -5,8 +5,9 @@ class NotesController < ApplicationController
     user = User.find_by(session[:user_id])
     @note.user = user unless user.nil?
     @note.readers << user unless user.nil?
-    byebug
-    redirect_to '/'
+    if @note.save?
+      redirect_to '/'
+    end 
   end
 
   def show
