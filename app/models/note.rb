@@ -11,6 +11,6 @@ class Note < ActiveRecord::Base
 
   def visible_to
     byebug
-    return self.readers.join(', ')
+    return self.readers.map(&:name).join(', ')
   end
 end
