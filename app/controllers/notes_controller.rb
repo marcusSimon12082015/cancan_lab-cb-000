@@ -7,7 +7,7 @@ class NotesController < ApplicationController
     @note.readers << user unless user.nil?
     if @note.save?
       redirect_to '/'
-    end 
+    end
   end
 
   def show
