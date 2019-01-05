@@ -5,5 +5,6 @@ class SessionController < ApplicationController
   end
 
   def destroy
+    session.delete(:id)
   end
 end
