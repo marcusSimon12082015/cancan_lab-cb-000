@@ -2,9 +2,8 @@ class NotesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @notes = Note.all
-    byebug
   end
+
   def create
     user = User.find_by(session[:user_id])
     @note.user = user unless user.nil?
