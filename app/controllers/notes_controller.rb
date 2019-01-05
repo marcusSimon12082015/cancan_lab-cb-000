@@ -2,6 +2,7 @@ class NotesController < ApplicationController
   load_and_authorize_resource
 
   def create
+    @note.user = User.find_by(session[:id])
     byebug
     redirect_to '/'
   end
