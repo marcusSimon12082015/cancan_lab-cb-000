@@ -7,7 +7,6 @@ class Note < ActiveRecord::Base
       user = User.find_by(name: reader)
       self.readers << user unless !user.nil?
     end
-    byebug
   end
 
   def visible_to
