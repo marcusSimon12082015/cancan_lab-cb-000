@@ -3,9 +3,8 @@ class NotesController < ApplicationController
 
   def index
   end
-  
+
   def create
-    byebug
     user = User.find_by(session[:user_id])
     @note.user = user unless user.nil?
     @note.readers << user unless user.nil?
