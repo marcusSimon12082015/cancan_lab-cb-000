@@ -7,4 +7,8 @@ class Note < ActiveRecord::Base
       self.readers << User.create(name: reader)
     end
   end
+
+  def visible_to
+    
+  end 
 end
